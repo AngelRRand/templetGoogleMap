@@ -8,8 +8,9 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         
     },
-    container:{
-        marginHorizontal:'2.5%'
+    containerMap:{
+        width:'100%',
+        height:'100%',
     },
 });
 export default styles

@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { StatusBar, Text, View } from 'react-native';
-import MapView from 'react-native-maps';
+import MapView, { Marker, Polyline } from 'react-native-maps';
 import styles from './styles/GlobalStyles';
 
 export default function App() {
 
   const [origin, setOrigin] = useState({
-    latitud: '-31.417117',
-    longitud: '-64.183507'
+    latitude: -31.417117,
+    longitude: -64.183507
   })
+
+  const [destination, setdestination] = useState({})
 
   return (
     <>
@@ -19,12 +21,16 @@ export default function App() {
           <MapView
             style={styles.map}
             initialRegion={{
-              latitude: origin.latitud,
-              longitude:origin.longitud,
-              latitudeDelta:0.09,
-              longitudeDelta:0.04
+              latitude: origin.latitude,
+              longitude: origin.longitude,
+              latitudeDelta: 0.09,
+              longitudeDelta: 0.04
             }}
-          />
+          >
+            <Marker
+              coordinate={origin}
+            />
+          </MapView>
         </View>
       </View>
     </>

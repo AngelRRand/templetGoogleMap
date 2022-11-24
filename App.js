@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { StatusBar, Text, View } from 'react-native';
 import MapView, { Marker, Polyline } from 'react-native-maps';
+import MapViewDirections from 'react-native-maps-directions';
 import styles from './styles/GlobalStyles';
 
 export default function App() {
@@ -46,6 +47,12 @@ export default function App() {
               coordinates={[origin, destination]}
               strokeColor='pink'
               strokeWidth={6}
+            />
+
+            <MapViewDirections
+              origin={origin}
+              destination={destination}
+              /* apiKey={} */
             />
           </MapView>
         </View>

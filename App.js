@@ -10,7 +10,10 @@ export default function App() {
     longitude: -64.183507
   })
 
-  const [destination, setdestination] = useState({})
+  const [destination, setdestination] = useState({
+    latitude: -31.420065,
+    longitude: -64.188807
+  })
 
   return (
     <>
@@ -28,7 +31,12 @@ export default function App() {
             }}
           >
             <Marker
+              draggable
               coordinate={origin}
+            />
+            <Marker
+              draggable
+              coordinate={destination}
             />
           </MapView>
         </View>

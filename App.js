@@ -32,11 +32,20 @@ export default function App() {
           >
             <Marker
               draggable
+              onDragEnd={(direction) => setOrigin(direction.nativeEvent.coordinate)}
               coordinate={origin}
             />
             <Marker
               draggable
+              onDragEnd={(direction) => setdestination(direction.nativeEvent.coordinate)}
               coordinate={destination}
+            />
+            
+            {/* Polyline solo marca una linea recta */}
+            <Polyline
+              coordinates={[origin, destination]}
+              strokeColor='pink'
+              strokeWidth={6}
             />
           </MapView>
         </View>

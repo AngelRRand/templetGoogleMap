@@ -3,7 +3,7 @@ import { StatusBar, Text, View } from 'react-native';
 import MapView, { Marker, Polyline } from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
 import styles from './styles/GlobalStyles';
-
+import {GOOGLE_MAPS_KEY} from '@env'
 export default function App() {
 
   const [origin, setOrigin] = useState({
@@ -52,7 +52,7 @@ export default function App() {
             <MapViewDirections
               origin={origin}
               destination={destination}
-              /* apiKey={} */
+              apiKey={GOOGLE_MAPS_KEY}
             />
           </MapView>
         </View>
